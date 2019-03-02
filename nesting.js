@@ -44,15 +44,26 @@ var employees = [
 // Do not edit the code above.
 
 /*
-  Create a function called 'employeeUpdater' that takes no parameters. employeeUpdater will loop over the array above and perform the following:
+  Create a function called 'employeeUpdater' that takes no parameters. employeeUpdater will loop over the array above
+   and perform the following:
     1. If employee's first name is Theo, remove that employee because he just got fired.
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
 
-//Code Here
-
-
+let employeeUpdater = ()=>{
+  for(key in employees){
+    if(employees[key].firstName ==='Theo'){
+      delete employees[key]
+     }
+     else if(employees[key].firstName === 'Lorie'){
+       employees[key].department = 'HR'
+     }
+  }
+  return employees
+  }
+  
+  console.log(employeeUpdater(employees))
 
 ////////// PROBLEM 2 //////////
 
@@ -68,7 +79,20 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+let removeDuplicates =(arr)=>{
+  
+  for(i=0; i<arr.length; i++){
+    for(j=i+1; j<arr.length; j++){
+      if (arr[i] === arr[j]){
+        arr.splice(i,1)
+        i--
+      }
+    }
+    
+  }
+  return arr
+}
+console.log(removeDuplicates(workplaceAccidents))
 
 
 
@@ -97,8 +121,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0]['activities'][1]
+var fluffy2ndFriend = cat.catFriends[1]['name']
 
 
 
@@ -138,7 +162,16 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+let recordCleaner = ()=>{
+  for(key in myCar.accidents){
+    if(myCar.accidents[key].atFaultForAccident){
+      myCar.accidents[key].atFaultForAccident = false
+    }
+  }
+  return myCar
+}
+console.log(recordCleaner(myCar))
+
 
 
 
@@ -157,6 +190,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+let looper = () =>{
+  
+  for (i=0; i<numsArr.length; i++)
+  for (j=0; j<numsArr[i].length; j++){
+    if(numsArr[i][j] %2 === 0){
+      numsArr[i][j] = 'even'
+    }
+    else {
+      numsArr[i][j] = 'odd'
+    }
+  }
+  return numsArr
+}
 
 
